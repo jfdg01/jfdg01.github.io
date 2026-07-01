@@ -240,14 +240,19 @@
                     You watch the drone's live feed and just say what you
                     mean — <em>"follow the white car," "switch to the
                     motorbike," "look at that bird"</em> — and the system
-                    grounds the phrase to a target, holds the lock through
-                    motion and occlusion, and steers the drone and camera to
-                    keep it framed. The whole loop runs on-device on a
-                    15&nbsp;W Jetson Orin Nano, no cloud. I build it in
-                    pre-registered stages — single-frame language grounding,
-                    then persistent tracking, then closing the loop to
-                    flight — each measured on held-out data, with the failures
-                    kept in the record rather than swept under it.
+                    turns the phrase into a bounding box, holds the lock
+                    through motion and occlusion, and drives the drone and
+                    gimbal to keep the target framed. Under the hood: a
+                    fine-tuned Qwen2-VL-2B, quantized to Q8_0 (1.65&nbsp;GB)
+                    so the whole loop fits a 15&nbsp;W Jetson Orin Nano with
+                    no cloud. A two-tier follow loop re-anchors with the VLM
+                    roughly every two seconds and coasts on a lightweight
+                    tracker in between, re-grounding on loss. I build it in
+                    pre-registered stages — single-frame grounding, then
+                    persistent tracking, then closing the loop to flight in
+                    simulation — each measured on held-out data at IoU@0.25,
+                    with the failures kept in the record rather than swept
+                    under it.
                 </p>
                 <div class="figures">
                     <div>
