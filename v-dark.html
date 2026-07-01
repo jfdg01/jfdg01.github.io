@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Javier Dibo Gómez — Software Engineer</title>
+<meta name="description" content="Software engineer. Edge-AI research. MSc Computer Engineering + MSc Cybersecurity, Universidad de Jaén.">
+<style>
+  :root {
+    --bg: #0a0e14;
+    --panel: #111823;
+    --fg: #cdd6e4;
+    --heading: #e8eefc;
+    --muted: #8592a6;
+    --line: #1e2836;
+    --accent: #64ffda;
+    --col: 720px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: "SF Mono", ui-monospace, JetBrains Mono, Menlo, Consolas, monospace; }
+  ::selection { background: rgba(100,255,218,.2); }
+  a { color: inherit; text-decoration: none; }
+  main { max-width: var(--col); margin: 0 auto; padding: 0 28px; }
+
+  header { padding: 100px 0 20px; }
+  .hi { color: var(--accent); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.9rem; letter-spacing: 0.02em; margin: 0 0 20px; }
+  h1 { color: var(--heading); font-size: clamp(2.6rem, 8vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1; margin: 0; }
+  .role { color: var(--muted); font-size: clamp(1.3rem, 5vw, 1.9rem); font-weight: 600; letter-spacing: -0.02em; margin: 12px 0 0; }
+  .lede { color: var(--muted); max-width: 34em; margin: 26px 0 0; }
+  .lede b { color: var(--fg); font-weight: 500; }
+  .socials { display: flex; gap: 22px; margin-top: 30px; }
+  .socials a { color: var(--muted); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.85rem; transition: color .15s; }
+  .socials a:hover { color: var(--accent); }
+
+  section { padding: 60px 0; }
+  .num { color: var(--accent); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.9rem; margin-right: 10px; }
+  h2 { display: flex; align-items: center; color: var(--heading); font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 30px; }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--line); margin-left: 20px; }
+
+  .featured {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 30px; transition: transform .2s, border-color .2s;
+  }
+  .featured:hover { border-color: rgba(100,255,218,.4); transform: translateY(-3px); }
+  .featured .badge { color: var(--accent); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .featured h3 { color: var(--heading); font-size: 1.35rem; font-weight: 600; margin: 12px 0 0; }
+  .featured p { color: var(--muted); margin: 14px 0 0; max-width: 46em; }
+  .stats { display: flex; flex-wrap: wrap; gap: 30px; margin: 26px 0 4px; }
+  .stats .n { color: var(--heading); font-size: 1.6rem; font-weight: 700; font-family: "SF Mono", ui-monospace, monospace; }
+  .stats .n small { color: var(--accent); font-size: 0.9rem; }
+  .stats .l { color: var(--muted); font-size: 0.78rem; margin-top: 4px; max-width: 13em; }
+  .tags { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 22px; }
+  .tags span { color: var(--muted); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.8rem; }
+  .featured .link { display: inline-block; margin-top: 22px; color: var(--accent); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.85rem; }
+  .featured .link:hover { text-decoration: underline; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 22px; transition: transform .2s, border-color .2s; }
+  .card:hover { border-color: rgba(100,255,218,.4); transform: translateY(-3px); }
+  .card h3 { color: var(--heading); font-size: 1.05rem; font-weight: 600; margin: 0 0 8px; }
+  .card p { color: var(--muted); font-size: 0.9rem; margin: 0 0 14px; }
+  .card .stack { color: var(--muted); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.75rem; }
+
+  footer { padding: 40px 0 70px; text-align: center; color: var(--muted); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.82rem; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="hi">Hi, my name is</p>
+    <h1>Javier Dibo Gómez.</h1>
+    <p class="role">I build systems for the edge.</p>
+    <p class="lede">Software engineer finishing a double master's in <b>Computer Engineering</b> and
+      <b>Cybersecurity</b> at the Universidad de Jaén. I work end-to-end, from model training to embedded
+      deployment, and keep things simple and correct.</p>
+    <div class="socials">
+      <a href="https://github.com/jfdg01">GitHub</a>
+      <a href="mailto:javier.fco.dibo.gomez@gmail.com">Email</a>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01.</span> Featured</h2>
+    <div class="featured">
+      <span class="badge">Master's thesis · in progress</span>
+      <h3>Vision-language grounding on a Jetson Orin Nano</h3>
+      <p>Fine-tuning and deploying vision-language models that locate objects in an image from a natural-language
+        prompt — running entirely on an 8&nbsp;GB, 15&nbsp;W edge device, no cloud. A fidelity-before-hardware
+        workflow: choose the spine, prove it survives quantization, then chase latency. Extended from single-frame
+        grounding to persistent tracking through occlusion.</p>
+      <div class="stats">
+        <div><div class="n">62<small>%</small></div><div class="l">on-device accuracy — beats the GPU reference</div></div>
+        <div><div class="n">1.65<small> GB</small></div><div class="l">quantized deploy artifact (Q8_0)</div></div>
+        <div><div class="n">15<small> W</small></div><div class="l">power budget, real-time</div></div>
+      </div>
+      <div class="tags"><span>PyTorch</span><span>llama.cpp</span><span>Qwen2-VL</span><span>CUDA / Tegra</span></div>
+      <a class="link" href="https://github.com/jfdg01/jetson">View repository →</a>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02.</span> Other work</h2>
+    <div class="grid">
+      <a class="card" href="https://cardenaspacheco.es"><h3>cardenaspacheco.es ↗</h3><p>A fast portfolio site for a working painter.</p><div class="stack">Svelte · static</div></a>
+      <a class="card" href="https://github.com/jfdg01/basic-fit-qr"><h3>Basic-Fit QR ↗</h3><p>Gym-access QR generator — multi-account, installable.</p><div class="stack">JavaScript · PWA</div></a>
+      <a class="card" href="https://github.com/jfdg01/proyecto-seu-planta"><h3>Plant sensor network ↗</h3><p>Two-node embedded telemetry over MQTT.</p><div class="stack">Python · IoT</div></a>
+      <a class="card" href="https://github.com/jfdg01"><h3>More on GitHub ↗</h3><p>Distributed computing, Godot games, tooling.</p><div class="stack">C · Kotlin · TypeScript</div></a>
+    </div>
+  </section>
+
+  <footer>
+    Built &amp; designed by Javier Dibo Gómez · <a href="mailto:javier.fco.dibo.gomez@gmail.com">get in touch</a>
+  </footer>
+</main>
+</body>
+</html>

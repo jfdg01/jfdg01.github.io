@@ -3,140 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Javier Dibo Gómez — Software Engineer</title>
-<meta name="description" content="Software engineer. MSc Computer Engineering + MSc Cybersecurity (UJaén). Edge-AI research, full-stack, embedded.">
+<title>Pick a design — Javier Dibo Gómez</title>
 <style>
-  :root {
-    --bg: #0d0f12;
-    --panel: #15181e;
-    --border: #262b34;
-    --fg: #e6e8ec;
-    --muted: #9aa3b2;
-    --accent: #6ea8fe;
-    --radius: 12px;
-    --max: 760px;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font: 16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  main { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
-  section { padding: 56px 0; border-top: 1px solid var(--border); }
-  section:first-of-type { border-top: 0; }
-  h1 { font-size: 2rem; margin: 0 0 6px; letter-spacing: -0.02em; }
-  h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 24px; }
-  h3 { margin: 0 0 4px; font-size: 1.05rem; }
-  p { margin: 0 0 14px; }
-  .muted { color: var(--muted); }
-
-  /* hero */
-  .hero { padding-top: 80px; }
-  .hero .role { color: var(--muted); font-size: 1.05rem; margin: 0 0 20px; }
-  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-  .links a {
-    border: 1px solid var(--border); border-radius: 8px;
-    padding: 7px 14px; color: var(--fg); font-size: 0.9rem;
-  }
-  .links a:hover { border-color: var(--accent); text-decoration: none; }
-
-  /* featured */
-  .featured {
-    background: var(--panel); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 28px;
-  }
-  .featured .tag {
-    display: inline-block; font-size: 0.72rem; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--accent);
-    border: 1px solid var(--accent); border-radius: 20px;
-    padding: 3px 12px; margin-bottom: 16px;
-  }
-  .stats { display: flex; flex-wrap: wrap; gap: 28px; margin: 22px 0 6px; }
-  .stats div { min-width: 90px; }
-  .stats .n { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em; }
-  .stats .l { font-size: 0.78rem; color: var(--muted); }
-
-  /* project grid */
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .card {
-    background: var(--panel); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px; transition: border-color .15s;
-  }
-  .card:hover { border-color: var(--accent); }
-  .card .stack { font-size: 0.78rem; color: var(--muted); margin-top: 10px; }
-  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
-
-  footer { padding: 40px 0 60px; color: var(--muted); font-size: 0.85rem; text-align: center; }
+  body { margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:#101216; color:#e6e8ec; font:16px/1.6 system-ui, sans-serif; gap:14px; padding:40px 20px; }
+  h1 { font-size:1.1rem; font-weight:600; margin:0 0 10px; }
+  p { color:#9aa3b2; margin:0 0 20px; font-size:0.9rem; text-align:center; }
+  a { display:block; width:min(360px,100%); padding:18px 22px; border:1px solid #2a2f3a; border-radius:12px;
+    color:#e6e8ec; text-decoration:none; transition:border-color .15s, transform .15s; }
+  a:hover { border-color:#6ea8fe; transform:translateY(-2px); }
+  a b { display:block; font-size:1.05rem; }
+  a span { color:#9aa3b2; font-size:0.85rem; }
 </style>
 </head>
 <body>
-<main>
-
-  <section class="hero">
-    <h1>Javier Dibo Gómez</h1>
-    <p class="role">Software engineer · MSc Computer Engineering + MSc Cybersecurity, Universidad de Jaén</p>
-    <p class="muted">I build things end-to-end — from fine-tuning vision-language models to run on 15&nbsp;W edge hardware, to full-stack web and embedded IoT. I like simple, correct systems.</p>
-    <div class="links">
-      <a href="https://github.com/jfdg01">GitHub</a>
-      <a href="mailto:javier.fco.dibo.gomez@gmail.com">Email</a>
-    </div>
-  </section>
-
-  <section>
-    <h2>Featured — Master's Thesis</h2>
-    <div class="featured">
-      <span class="tag">Edge AI · In progress</span>
-      <h3>Vision-language grounding on a Jetson Orin Nano</h3>
-      <p class="muted">Fine-tuning and deploying vision-language models that locate objects in an image from a
-      natural-language prompt — running entirely on an 8&nbsp;GB, 15&nbsp;W edge device with no cloud. A
-      fidelity-before-hardware workflow: pick the model spine, prove it survives quantization, then push
-      latency. Extended from single-frame grounding to persistent tracking across occlusion.</p>
-      <div class="stats">
-        <div><div class="n">62%</div><div class="l">grounding accuracy on-device — beats the full-precision GPU reference</div></div>
-        <div><div class="n">1.65 GB</div><div class="l">quantized deploy artifact (Q8_0)</div></div>
-        <div><div class="n">15 W</div><div class="l">power envelope, real-time inference</div></div>
-      </div>
-      <p class="stack" style="margin-top:18px"><a href="https://github.com/jfdg01/jetson">Repository →</a>
-      &nbsp;·&nbsp; PyTorch · llama.cpp · Qwen2-VL · CUDA / Tegra</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Other Work</h2>
-    <div class="grid">
-      <div class="card">
-        <h3><a href="https://cardenaspacheco.es">cardenaspacheco.es</a></h3>
-        <p class="muted">Artist portfolio — a fast, clean showcase site built and maintained for a working painter.</p>
-        <div class="stack">Svelte · static</div>
-      </div>
-      <div class="card">
-        <h3><a href="https://github.com/jfdg01/basic-fit-qr">Basic-Fit QR</a></h3>
-        <p class="muted">Lightweight web app to generate gym access QR codes — multi-account, dark mode, installable.</p>
-        <div class="stack">JavaScript · PWA</div>
-      </div>
-      <div class="card">
-        <h3><a href="https://github.com/jfdg01/proyecto-seu-planta">Plant sensor network</a></h3>
-        <p class="muted">Two-node embedded sensor system reporting plant parameters over an MQTT server.</p>
-        <div class="stack">Python · MQTT · IoT</div>
-      </div>
-      <div class="card">
-        <h3><a href="https://github.com/jfdg01">More on GitHub →</a></h3>
-        <p class="muted">Coursework and side projects: distributed computing (MPI, Spark), Godot games, tooling.</p>
-        <div class="stack">C · Kotlin · TypeScript · GDScript</div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    Madrid / Jaén, Spain · <a href="mailto:javier.fco.dibo.gomez@gmail.com">javier.fco.dibo.gomez@gmail.com</a>
-  </footer>
-
-</main>
+  <h1>Three designs — pick one</h1>
+  <p>Temporary chooser. Open each, then tell me the winner and I'll make it the real homepage.</p>
+  <a href="v-editorial.html"><b>1 · Editorial / researcher →</b><span>Serif, warm, text-forward. Thesis as abstract.</span></a>
+  <a href="v-terminal.html"><b>2 · Terminal / spec-sheet →</b><span>Monospace, hairline rules, data-dense.</span></a>
+  <a href="v-dark.html"><b>3 · Refined dark dev →</b><span>Ink navy, mint accent, mono numbering.</span></a>
 </body>
 </html>
