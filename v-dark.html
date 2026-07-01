@@ -5,121 +5,152 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Javier Dibo Gómez — Software Engineer</title>
 <meta name="description" content="Software engineer. Edge-AI research. MSc Computer Engineering + MSc Cybersecurity, Universidad de Jaén.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0e14;
-    --panel: #111823;
-    --fg: #cdd6e4;
-    --heading: #e8eefc;
-    --muted: #8592a6;
-    --line: #1e2836;
-    --accent: #64ffda;
-    --col: 720px;
+    --bg: #0a0a0b;
+    --card: #141416;
+    --card2: #17171a;
+    --fg: #ececed;
+    --muted: #86868c;
+    --line: #232327;
+    --accent: #e0a458;
+    --sans: "Space Grotesk", system-ui, sans-serif;
+    --serif: "Source Serif 4", Georgia, serif;
+    --mono: "Space Mono", ui-monospace, monospace;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0; background: var(--bg); color: var(--fg);
-    font: 16px/1.65 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
+    font-family: var(--sans); -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(120% 80% at 80% -10%, rgba(224,164,88,.06), transparent 60%);
   }
-  .mono { font-family: "SF Mono", ui-monospace, JetBrains Mono, Menlo, Consolas, monospace; }
-  ::selection { background: rgba(100,255,218,.2); }
+  ::selection { background: rgba(224,164,88,.25); }
   a { color: inherit; text-decoration: none; }
-  main { max-width: var(--col); margin: 0 auto; padding: 0 28px; }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 40px 24px 70px; }
 
-  header { padding: 100px 0 20px; }
-  .hi { color: var(--accent); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.9rem; letter-spacing: 0.02em; margin: 0 0 20px; }
-  h1 { color: var(--heading); font-size: clamp(2.6rem, 8vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1; margin: 0; }
-  .role { color: var(--muted); font-size: clamp(1.3rem, 5vw, 1.9rem); font-weight: 600; letter-spacing: -0.02em; margin: 12px 0 0; }
-  .lede { color: var(--muted); max-width: 34em; margin: 26px 0 0; }
-  .lede b { color: var(--fg); font-weight: 500; }
-  .socials { display: flex; gap: 22px; margin-top: 30px; }
-  .socials a { color: var(--muted); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.85rem; transition: color .15s; }
-  .socials a:hover { color: var(--accent); }
+  .label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .accent { color: var(--accent); }
 
-  section { padding: 60px 0; }
-  .num { color: var(--accent); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.9rem; margin-right: 10px; }
-  h2 { display: flex; align-items: center; color: var(--heading); font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 30px; }
-  h2::after { content: ""; flex: 1; height: 1px; background: var(--line); margin-left: 20px; }
+  .bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 26px;
+    transition: border-color .2s, transform .2s; }
+  a.card:hover { border-color: rgba(224,164,88,.5); transform: translateY(-3px); }
 
-  .featured {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
-    padding: 30px; transition: transform .2s, border-color .2s;
+  .span2 { grid-column: span 2; }
+  .span3 { grid-column: span 3; }
+
+  /* identity */
+  .id { display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; }
+  .id h1 { font-weight: 700; font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -0.03em; line-height: 0.98; margin: 18px 0 0; }
+  .id .role { color: var(--muted); margin-top: 12px; font-size: 1rem; }
+  .id .role b { color: var(--fg); font-weight: 500; }
+
+  .contact { display: flex; flex-direction: column; justify-content: space-between; }
+  .contact .links { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+  .contact .links a { font-family: var(--mono); font-size: 0.82rem; color: var(--fg); display: flex; justify-content: space-between;
+    border-top: 1px solid var(--line); padding-top: 10px; transition: color .15s; }
+  .contact .links a:hover { color: var(--accent); }
+
+  /* thesis */
+  .thesis { background: var(--card2); }
+  .thesis .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .thesis .badge { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid rgba(224,164,88,.4); border-radius: 20px; padding: 4px 12px; }
+  .thesis h2 { font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.025em; line-height: 1.05; margin: 18px 0 0; }
+  .thesis p { font-family: var(--serif); color: #c3c3c7; font-size: 1.05rem; line-height: 1.65; margin: 16px 0 0; max-width: 46em; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
+  .stats .cell { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .stats .n { font-weight: 700; font-size: 1.9rem; letter-spacing: -0.03em; line-height: 1; }
+  .stats .n small { color: var(--accent); font-size: 1rem; }
+  .stats .l { font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+  .thesis .foot { display: flex; align-items: center; justify-content: space-between; margin-top: 22px; flex-wrap: wrap; gap: 10px; }
+  .thesis .tags { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
+  .thesis .repo { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); }
+  @media (max-width: 620px) { .stats { grid-template-columns: 1fr; } }
+
+  /* project cards */
+  .proj { display: flex; flex-direction: column; justify-content: space-between; min-height: 150px; }
+  .proj h3 { font-weight: 600; font-size: 1.2rem; letter-spacing: -0.01em; margin: 16px 0 6px; }
+  .proj p { color: var(--muted); font-size: 0.9rem; margin: 0; font-family: var(--serif); }
+  .proj .stack { font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-top: 14px; }
+  .arrow { color: var(--muted); font-size: 0.9rem; }
+  a.card:hover .arrow { color: var(--accent); }
+
+  @media (max-width: 620px) {
+    .bento { grid-template-columns: 1fr; }
+    .span2, .span3 { grid-column: span 1; }
   }
-  .featured:hover { border-color: rgba(100,255,218,.4); transform: translateY(-3px); }
-  .featured .badge { color: var(--accent); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
-  .featured h3 { color: var(--heading); font-size: 1.35rem; font-weight: 600; margin: 12px 0 0; }
-  .featured p { color: var(--muted); margin: 14px 0 0; max-width: 46em; }
-  .stats { display: flex; flex-wrap: wrap; gap: 30px; margin: 26px 0 4px; }
-  .stats .n { color: var(--heading); font-size: 1.6rem; font-weight: 700; font-family: "SF Mono", ui-monospace, monospace; }
-  .stats .n small { color: var(--accent); font-size: 0.9rem; }
-  .stats .l { color: var(--muted); font-size: 0.78rem; margin-top: 4px; max-width: 13em; }
-  .tags { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 22px; }
-  .tags span { color: var(--muted); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.8rem; }
-  .featured .link { display: inline-block; margin-top: 22px; color: var(--accent); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.85rem; }
-  .featured .link:hover { text-decoration: underline; }
-
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 22px; transition: transform .2s, border-color .2s; }
-  .card:hover { border-color: rgba(100,255,218,.4); transform: translateY(-3px); }
-  .card h3 { color: var(--heading); font-size: 1.05rem; font-weight: 600; margin: 0 0 8px; }
-  .card p { color: var(--muted); font-size: 0.9rem; margin: 0 0 14px; }
-  .card .stack { color: var(--muted); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.75rem; }
-
-  footer { padding: 40px 0 70px; text-align: center; color: var(--muted); font-family: "SF Mono", ui-monospace, monospace; font-size: 0.82rem; }
-  footer a { color: var(--muted); }
-  footer a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <p class="hi">Hi, my name is</p>
-    <h1>Javier Dibo Gómez.</h1>
-    <p class="role">I build systems for the edge.</p>
-    <p class="lede">Software engineer finishing a double master's in <b>Computer Engineering</b> and
-      <b>Cybersecurity</b> at the Universidad de Jaén. I work end-to-end, from model training to embedded
-      deployment, and keep things simple and correct.</p>
-    <div class="socials">
-      <a href="https://github.com/jfdg01">GitHub</a>
-      <a href="mailto:javier.fco.dibo.gomez@gmail.com">Email</a>
-    </div>
-  </header>
+<div class="wrap">
+  <div class="bento">
 
-  <section>
-    <h2><span class="num">01.</span> Featured</h2>
-    <div class="featured">
-      <span class="badge">Master's thesis · in progress</span>
-      <h3>Vision-language grounding on a Jetson Orin Nano</h3>
+    <div class="card id span2">
+      <span class="label">Software engineer · edge-AI research</span>
+      <div>
+        <h1>Javier Dibo Gómez</h1>
+        <p class="role">Finishing a double master's in <b>Computer Engineering</b> and <b>Cybersecurity</b> at the Universidad de Jaén. End-to-end, simple and correct.</p>
+      </div>
+    </div>
+
+    <div class="card contact">
+      <span class="label">Contact</span>
+      <div class="links">
+        <a href="https://github.com/jfdg01">GitHub <span class="arrow">↗</span></a>
+        <a href="mailto:javier.fco.dibo.gomez@gmail.com">Email <span class="arrow">↗</span></a>
+        <a href="https://cardenaspacheco.es">Location — Jaén ES</a>
+      </div>
+    </div>
+
+    <div class="card thesis span3">
+      <div class="top">
+        <span class="label accent">01 — Featured</span>
+        <span class="badge">Master's thesis · in progress</span>
+      </div>
+      <h2>Vision-language grounding on a Jetson Orin Nano</h2>
       <p>Fine-tuning and deploying vision-language models that locate objects in an image from a natural-language
         prompt — running entirely on an 8&nbsp;GB, 15&nbsp;W edge device, no cloud. A fidelity-before-hardware
         workflow: choose the spine, prove it survives quantization, then chase latency. Extended from single-frame
         grounding to persistent tracking through occlusion.</p>
       <div class="stats">
-        <div><div class="n">62<small>%</small></div><div class="l">on-device accuracy — beats the GPU reference</div></div>
-        <div><div class="n">1.65<small> GB</small></div><div class="l">quantized deploy artifact (Q8_0)</div></div>
-        <div><div class="n">15<small> W</small></div><div class="l">power budget, real-time</div></div>
+        <div class="cell"><div class="n">62<small>%</small></div><div class="l">On-device accuracy — beats the GPU reference</div></div>
+        <div class="cell"><div class="n">1.65<small> GB</small></div><div class="l">Quantized deploy artifact · Q8_0</div></div>
+        <div class="cell"><div class="n">15<small> W</small></div><div class="l">Power budget · real-time</div></div>
       </div>
-      <div class="tags"><span>PyTorch</span><span>llama.cpp</span><span>Qwen2-VL</span><span>CUDA / Tegra</span></div>
-      <a class="link" href="https://github.com/jfdg01/jetson">View repository →</a>
+      <div class="foot">
+        <span class="tags">PyTorch · llama.cpp · Qwen2-VL · CUDA/Tegra</span>
+        <a class="repo" href="https://github.com/jfdg01/jetson">View repository →</a>
+      </div>
     </div>
-  </section>
 
-  <section>
-    <h2><span class="num">02.</span> Other work</h2>
-    <div class="grid">
-      <a class="card" href="https://cardenaspacheco.es"><h3>cardenaspacheco.es ↗</h3><p>A fast portfolio site for a working painter.</p><div class="stack">Svelte · static</div></a>
-      <a class="card" href="https://github.com/jfdg01/basic-fit-qr"><h3>Basic-Fit QR ↗</h3><p>Gym-access QR generator — multi-account, installable.</p><div class="stack">JavaScript · PWA</div></a>
-      <a class="card" href="https://github.com/jfdg01/proyecto-seu-planta"><h3>Plant sensor network ↗</h3><p>Two-node embedded telemetry over MQTT.</p><div class="stack">Python · IoT</div></a>
-      <a class="card" href="https://github.com/jfdg01"><h3>More on GitHub ↗</h3><p>Distributed computing, Godot games, tooling.</p><div class="stack">C · Kotlin · TypeScript</div></a>
-    </div>
-  </section>
+    <a class="card proj" href="https://cardenaspacheco.es">
+      <span class="label">02 — Live site</span>
+      <div><h3>cardenaspacheco.es <span class="arrow">↗</span></h3><p>A fast portfolio for a working painter.</p></div>
+      <div class="stack">Svelte · static</div>
+    </a>
+    <a class="card proj" href="https://github.com/jfdg01/basic-fit-qr">
+      <span class="label">03 — Web app</span>
+      <div><h3>Basic-Fit QR <span class="arrow">↗</span></h3><p>Gym-access QR generator, multi-account.</p></div>
+      <div class="stack">JavaScript · PWA</div>
+    </a>
+    <a class="card proj" href="https://github.com/jfdg01/proyecto-seu-planta">
+      <span class="label">04 — Embedded</span>
+      <div><h3>Plant sensor net <span class="arrow">↗</span></h3><p>Two-node telemetry over MQTT.</p></div>
+      <div class="stack">Python · IoT</div>
+    </a>
 
-  <footer>
-    Built &amp; designed by Javier Dibo Gómez · <a href="mailto:javier.fco.dibo.gomez@gmail.com">get in touch</a>
-  </footer>
-</main>
+    <a class="card proj span3" href="https://github.com/jfdg01">
+      <span class="label">05 — Archive</span>
+      <div><h3>More on GitHub <span class="arrow">↗</span></h3><p>Distributed computing, Godot games, tooling and coursework — everything public.</p></div>
+      <div class="stack">C · Kotlin · TypeScript · GDScript · @jfdg01</div>
+    </a>
+
+  </div>
+</div>
 </body>
 </html>
