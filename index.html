@@ -161,7 +161,8 @@
             .work li:last-child {
                 border-bottom: 1px solid var(--line);
             }
-            .work a {
+            .work a,
+            .work .row {
                 display: flex;
                 align-items: baseline;
                 justify-content: space-between;
@@ -323,13 +324,13 @@
                         >
                     </li>
                     <li>
-                        <a
-                            href="https://github.com/jfdg01/offline-gym-tracker-app"
-                            ><span class="name">Offline Gym Tracker</span
+                        <div class="row"
+                            ><span class="name">Gym App</span
                             ><span class="desc"
-                                >Offline-first workout tracker, no
-                                subscriptions</span
-                            ><span class="meta">Expo · SQLite</span></a
+                                >Guides each set and adjusts the weights itself;
+                                one profile per person, self-hosted behind Caddy
+                                with HTTPS</span
+                            ><span class="meta">FastAPI · SQLite</span></div
                         >
                     </li>
                 </ul>
